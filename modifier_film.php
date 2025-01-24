@@ -65,5 +65,4 @@ $film = $stmt->fetch(PDO::FETCH_ASSOC);
         <button type="submit" class="btn btn-primary">Mettre à jour</button>
     </form>
 </div>
-</body>
-</html>
+<?php include('footer.php') ?>

@@ -41,5 +41,4 @@ $films = $pdo->query("SELECT * FROM films")->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
     </table>
 </div>
-</body>
-</html>
+<?php include('footer.php') ?>

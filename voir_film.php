@@ -22,5 +22,4 @@ $film = $stmt->fetch(PDO::FETCH_ASSOC);
     <p><strong>Affiche :</strong> <img src="<?= htmlspecialchars($film['affiche']) ?>" alt="Affiche" style="max-width: 200px;"></p>
     <a href="gestion_film.php" class="btn btn-secondary">Retour</a>
 </div>
-</body>
-</html>
+<?php include('footer.php') ?>

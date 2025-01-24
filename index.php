@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <a href="#" class="btn btn-primary">Voir le catalogue complet</a>
+            <a href="catalogue.php" class="btn btn-primary">Voir le catalogue complet</a>
         </div>
     </div>
 </section>
@@ -67,8 +67,4 @@
         </div>
     </div>
 </section>
-<footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">&copy; 2025 Dugny au Ciné. Tous droits réservés. | <a href="#" class="text-warning">Mentions légales</a></p>
-</footer>
-</body>
-</html>
+<?php include('footer.php') ?>
