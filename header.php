@@ -24,7 +24,7 @@
         <a class="nav-link" aria-current="page" href="#">A Propos</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="#">Contact</a>
+        <a class="nav-link" aria-current="page" href="contact.php">Contact</a>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Mon Compte</a>
