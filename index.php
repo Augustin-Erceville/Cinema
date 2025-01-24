@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <a href="#" class="btn btn-primary">Voir le catalogue complet</a>
+            <a href="catalogue.php" class="btn btn-primary">Voir le catalogue complet</a>
         </div>
     </div>
 </section>
