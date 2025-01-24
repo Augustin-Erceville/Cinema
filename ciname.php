@@ -4,224 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Dugny au Ciné</title>
-    <style>
-        /* Style global */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f9;
-            color: #333;
-        }
-
-        header {
-            background: url('https://via.placeholder.com/1920x600?text=Bienvenue+au+Cinéma') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-            padding: 100px 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        header h1 {
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        header p {
-            font-size: 1.5em;
-            margin-top: 20px;
-        }
-
-        nav {
-            background: #444;
-            display: flex;
-            justify-content: center;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #FFD700;
-        }
-
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: auto;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            background: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            font-size: 2.5em;
-            color: #007BFF;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .film-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            gap: 20px;
-        }
-
-        .film-card {
-            width: 300px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            background: #f9f9f9;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .film-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .film-card img {
-            width: 100%;
-            height: auto;
-        }
-
-        .film-card h3 {
-            margin: 15px;
-            font-size: 1.5em;
-            color: #007BFF;
-        }
-
-        .film-card p {
-            margin: 0 15px 15px;
-            font-size: 1em;
-            color: #555;
-        }
-
-        .section-image {
-            text-align: center;
-        }
-
-        .section-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            margin: 20px 0;
-            background: #007BFF;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            transition: background 0.3s ease;
-        }
-
-        .button:hover {
-            background: #0056b3;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: #fff;
-            font-size: 1em;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        footer a {
-            color: #FFD700;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
-<header>
-    <h1>Bienvenue sur Dugny au Ciné 🎬</h1>
-    <p>Découvrez les dernières sorties et réservez votre place dès maintenant !</p>
+<header class="bg-dark text-white text-center py-5" style="background: url('https://via.placeholder.com/1920x600?text=Bienvenue+au+Cinéma') no-repeat center center / cover;">
+    <div class="container">
+        <h1 class="display-4">Bienvenue à Dugny au Ciné 🎬</h1>
+        <p class="lead">Découvrez les dernières sorties et réservez votre place dès maintenant !</p>
+    </div>
 </header>
-
-<nav>
-    <a href="#films">Films à l'affiche</a>
-    <a href="#planning">Planning des séances</a>
-    <a href="#reservation">Réserver</a>
-    <a href="#about">À propos</a>
-    <a href="#contact">Contact</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Dugny au Ciné</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#films">Films à l'affiche</a></li>
+                <li class="nav-item"><a class="nav-link" href="#planning">Planning des séances</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reservation">Réserver</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
-
-<section id="films">
-    <h2>Films à l'Affiche</h2>
-    <div class="film-container">
-        <div class="film-card">
-            <img src="https://via.placeholder.com/300x400?text=Film+1" alt="Affiche du Film 1">
-            <h3>Film 1</h3>
-            <p>Une aventure palpitante qui vous tiendra en haleine.</p>
+<section id="films" class="py-5">
+    <div class="container">
+        <h2 class="text-center text-primary mb-4">Films à l'Affiche</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x400?text=Film+1" class="card-img-top" alt="Film 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Film 1</h5>
+                        <p class="card-text">Une aventure palpitante qui vous tiendra en haleine.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x400?text=Film+2" class="card-img-top" alt="Film 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Film 2</h5>
+                        <p class="card-text">Une comédie romantique à ne pas manquer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x400?text=Film+3" class="card-img-top" alt="Film 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Film 3</h5>
+                        <p class="card-text">Un thriller captivant qui vous surprendra.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x400?text=Film+4" class="card-img-top" alt="Film 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Film 4</h5>
+                        <p class="card-text">Un drame poignant qui ne laissera personne indifférent.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="film-card">
-            <img src="https://via.placeholder.com/300x400?text=Film+2" alt="Affiche du Film 2">
-            <h3>Film 2</h3>
-            <p>Une comédie romantique à ne pas manquer.</p>
-        </div>
-        <div class="film-card">
-            <img src="https://via.placeholder.com/300x400?text=Film+3" alt="Affiche du Film 3">
-            <h3>Film 3</h3>
-            <p>Un thriller captivant qui vous surprendra.</p>
-        </div>
-        <div class="film-card">
-            <img src="https://via.placeholder.com/300x400?text=Film+4" alt="Affiche du Film 4">
-            <h3>Film 4</h3>
-            <p>Un drame poignant qui ne laissera personne indifférent.</p>
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary">Voir le catalogue complet</a>
         </div>
     </div>
-    <a href="#" class="button">Voir le catalogue complet</a>
 </section>
-
-<section id="planning">
-    <h2>Planning des Séances</h2>
-    <div class="section-image">
-        <img src="https://via.placeholder.com/1200x400?text=Planning+des+Séances" alt="Planning">
+<section id="planning" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center text-primary mb-4">Planning des Séances</h2>
+        <div class="text-center">
+            <img src="https://via.placeholder.com/1200x400?text=Planning+des+Séances" class="img-fluid rounded" alt="Planning">
+        </div>
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary">Voir le planning</a>
+        </div>
     </div>
-    <a href="#" class="button">Voir le planning</a>
 </section>
-
-<section id="reservation">
-    <h2>Réservez vos Places</h2>
-    <div class="section-image">
-        <img src="https://via.placeholder.com/1200x400?text=Réservez+votre+place" alt="Réservation">
+<section id="reservation" class="py-5">
+    <div class="container">
+        <h2 class="text-center text-primary mb-4">Réservez vos Places</h2>
+        <div class="text-center">
+            <img src="https://via.placeholder.com/1200x400?text=Réservez+votre+place" class="img-fluid rounded" alt="Réservation">
+        </div>
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-success">Réserver maintenant</a>
+        </div>
     </div>
-    <a href="#" class="button">Réserver maintenant</a>
 </section>
-
-<footer>
-    <p>&copy; 2025 Dugny au Ciné. Tous droits réservés. | <a href="#">Mentions légales</a></p>
+<footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Dugny au Ciné. Tous droits réservés. | <a href="#" class="text-warning">Mentions légales</a></p>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
