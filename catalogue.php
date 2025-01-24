@@ -30,6 +30,7 @@
             <p><strong>Genre :</strong> Drame</p>
             <p><strong>Résumé :</strong> Une histoire émouvante d'un individu surmontant des défis personnels.</p>
         </div>
+        </div>
     </div>
 </div>
 </body>
