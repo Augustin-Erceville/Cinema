@@ -11,7 +11,7 @@ $films = $pdo->query("SELECT * FROM films")->fetchAll(PDO::FETCH_ASSOC);
 <body>
 <div class="container py-5">
     <h1>Gestion des Films</h1>
-    <a href="creer_film.php" class="btn btn-success mb-3">Ajouter un Film</a>
+    <a href="creer_film.php" class="btn btn-success mb-3">➕</a>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -32,9 +32,9 @@ $films = $pdo->query("SELECT * FROM films")->fetchAll(PDO::FETCH_ASSOC);
                 <td><?= htmlspecialchars($film['sortie']) ?></td>
                 <td><?= htmlspecialchars($film['duree']) ?></td>
                 <td>
-                    <a href="voir_film.php?id=<?= $film['id_film'] ?>" class="btn btn-info btn-sm">Voir</a>
-                    <a href="modifier_film.php?id=<?= $film['id_film'] ?>" class="btn btn-warning btn-sm">Modifier</a>
-                    <a href="supprimer_film.php?id=<?= $film['id_film'] ?>" class="btn btn-danger btn-sm">Supprimer</a>
+                    <a href="voir_film.php?id=<?= $film['id_film'] ?>" class="btn btn-info btn-sm">👁️</a>
+                    <a href="modifier_film.php?id=<?= $film['id_film'] ?>" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="supprimer_film.php?id=<?= $film['id_film'] ?>" class="btn btn-danger btn-sm">🗑️</a>
                 </td>
             </tr>
         <?php endforeach; ?>
