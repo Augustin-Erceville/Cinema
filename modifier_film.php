@@ -1,5 +1,6 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=projets_cinema', 'root', '');
+include ('header.php');
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE films SET titre = ?, description = ?, genre = ?, sortie = ?, duree = ?, affiche = ? WHERE id_film = ?");
     $stmt->execute([

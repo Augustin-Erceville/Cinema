@@ -1,5 +1,5 @@
 <?php
-include ("config.php");
+include ('header.php');
 
 if (isset($_POST['envoyer'])) {
     $prenom = $_POST['prenom'];
@@ -46,7 +46,6 @@ if (isset($_POST['envoyer'])) {
 </head>
 <body>
 <div class="container">
-    <a href="index.php" class="btn btn-secondary">Acceuil</a>
     <h1>Inscription</h1>
     <form action="" method="post">
         <div class="mb-3">

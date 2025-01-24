@@ -1,6 +1,5 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=projets_cinema', 'root', '');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+include ('header.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("INSERT INTO films (titre, description, genre, sortie, duree, affiche) VALUES (?, ?, ?, ?, ?, ?)");
@@ -16,13 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Ajouter un Film</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
 <div class="container py-5">
     <h1>Ajouter un Film</h1>
     <form method="POST">

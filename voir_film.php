@@ -1,5 +1,6 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=projets_cinema', 'root', '');
+include ('header.php');
+
 $stmt = $pdo->prepare("SELECT * FROM films WHERE id_film = ?");
 $stmt->execute([$_GET['id']]);
 $film = $stmt->fetch(PDO::FETCH_ASSOC);

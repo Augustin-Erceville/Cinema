@@ -3,7 +3,7 @@ session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-include ("config.php");
+include ('header.php');
 $message = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -48,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="container mt-5">
-    <a href="index.php" class="btn btn-secondary">Acceuil</a>
     <h1 class="mb-4">Connexion</h1>
     <?php if (!empty($message)) : ?>
         <div class="alert alert-danger"><?= htmlspecialchars($message) ?></div>

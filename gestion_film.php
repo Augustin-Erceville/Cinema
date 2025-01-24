@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=projets_cinema', 'root', '');
+include ('header.php');
 $films = $pdo->query("SELECT * FROM films")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,6 @@ $films = $pdo->query("SELECT * FROM films")->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <div class="container py-5">
-    <a href="index.php" class="btn btn-secondary">Acceuil</a>
     <h1>Gestion des Films</h1>
     <a href="creer_film.php" class="btn btn-success mb-3">➕</a>
     <table class="table table-striped">
