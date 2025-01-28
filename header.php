@@ -1,4 +1,3 @@
-<?php include ('config.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +6,14 @@
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<h1 class="text-center" style="text-transform: uppercase">DugnyCiné</h1>
+<h1 class="text-center" style="text-transform: uppercase">
+    DugnyCiné
+    <?php if (isset($_SESSION['id_user'])): ?>
+        <div style="position: absolute; top: 20px; right: 20px;">
+            <span style="background-color: green; color: white; padding: 5px 10px; border-radius: 50%;">Connecté</span>
+        </div>
+    <?php endif; ?>
+</h1>
 <ul class="nav nav-tabs">
     <li class="nav-item">
         <a class="nav-link" aria-current="page" href="index.php">Acceuil</a>

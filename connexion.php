@@ -1,5 +1,6 @@
 <?php
 include ('header.php');
+include('config.php');
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -12,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password'] ?? '');
     if (!empty($email) && !empty($password)) {
         try {
-            $req = $bdd->prepare('SELECT id_user, email, password FROM utilisateur WHERE email = :email');
+            $req = $bdd->prepare('SELECT id_user, email, password FROM users WHERE email = :email');
             $req->execute(['email' => $email]);
             $user = $req->fetch();
 
