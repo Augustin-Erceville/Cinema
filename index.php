@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD:vue/index.php
-<?php include ('header.php') ?>
+
+<?php include ('') ?>
 <section id="films" class="py-5">
     <div class="container">
         <h2 class="text-center text-primary mb-4">Films à l'Affiche</h2>
