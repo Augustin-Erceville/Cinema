@@ -1,5 +1,5 @@
-<?php include ('header.php') ?>
-<?php include ('config.php') ?>
+<?php include('header.php') ?>
+<?php include('config.php') ?>
 <section id="films" class="py-5">
     <div class="container">
         <h2 class="text-center text-primary mb-4">Films à l'Affiche</h2>
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <a href="catalogue.php" class="btn btn-primary">Voir le catalogue complet</a>
+            <a href="src/repository/catalogue.php" class="btn btn-primary">Voir le catalogue complet</a>
         </div>
     </div>
 </section>

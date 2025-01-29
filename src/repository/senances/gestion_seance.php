@@ -1,14 +1,7 @@
 <?php
-include ('header.php');
+include('header.php');
 include('config.php');
-
-// Requête pour récupérer les séances avec les films correspondants
-$stmt = $bdd->query("SELECT seances.id_seance, seances.date_seance, seances.heure_seance, seances.salle, films.titre
-                     FROM seances
-                     JOIN films ON seances.ref_film = films.id_film
-                     ORDER BY seances.date_seance DESC, seances.heure_seance DESC");
-
-$seances = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$seances = $bdd->query("SELECT S.*, F.titre FROM seances S INNER JOIN films F ON F.id_film  S.ref_film")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,9 +30,9 @@ $seances = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($seances as $seance): ?>
             <tr>
                 <td><?= htmlspecialchars($seance['id_seance']) ?></td>
-                <td><?= htmlspecialchars($seance['titre']) ?></td>
-                <td><?= htmlspecialchars($seance['date_seance']) ?></td>
-                <td><?= htmlspecialchars($seance['heure_seance']) ?></td>
+                <td><?= htmlspecialchars($seance['F.titre']) ?></td>
+                <td><?= htmlspecialchars($seance['date']) ?></td>
+                <td><?= htmlspecialchars($seance['heure']) ?></td>
                 <td><?= htmlspecialchars($seance['salle']) ?></td>
                 <td>
                     <a href="voir_seance.php?id=<?= $seance['id_seance'] ?>" class="btn btn-info btn-sm">👁️</a>

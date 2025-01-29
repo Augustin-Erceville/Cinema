@@ -1,4 +1,4 @@
-<?php include ('header.php') ?>
+<?php include('header.php') ?>
 <div class="catalogue-container">
     <h1>Catalogue des Films</h1>
     <div class="films">
@@ -25,4 +25,4 @@
         </div>
     </div>
 </div>
-<?php include ('footer.php') ?>
+<?php include('footer.php') ?>

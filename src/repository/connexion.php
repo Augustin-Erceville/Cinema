@@ -1,5 +1,5 @@
 <?php
-include ('header.php');
+include('header.php');
 include('config.php');
 session_start();
 ini_set('display_errors', 1);

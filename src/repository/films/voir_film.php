@@ -1,5 +1,5 @@
 <?php
-include ('header.php');
+include('header.php');
 include('config.php');
 $stmt = $pdo->prepare("SELECT * FROM films WHERE id_film = ?");
 $stmt->execute([$_GET['id']]);
