@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogue des Films</title>
-    <link rel="stylesheet" href="style_catalogue.css">
-</head>
-<body>
+<?php include ('header.php') ?>
 <div class="catalogue-container">
     <h1>Catalogue des Films</h1>
     <div class="films">
@@ -33,5 +25,4 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+<?php include ('footer.php') ?>

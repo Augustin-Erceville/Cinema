@@ -1,6 +1,6 @@
 <?php
 include ('header.php');
-
+include('config.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE films SET titre = ?, description = ?, genre = ?, sortie = ?, duree = ?, affiche = ? WHERE id_film = ?");
     $stmt->execute([
