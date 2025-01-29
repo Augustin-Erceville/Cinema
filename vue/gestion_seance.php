@@ -1,6 +1,5 @@
 <?php
 include('header.php');
-include('config.php');
 $seances = $bdd->query("SELECT S.*, F.titre FROM seances S INNER JOIN films F ON F.id_film  S.ref_film")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,5 @@
 <?php
 include('header.php');
-include('config.php');
-
 $stmt = $bdd->prepare("SELECT id_film, titre FROM films");
 $stmt->execute();
 $films = $stmt->fetchAll(PDO::FETCH_ASSOC);

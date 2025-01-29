@@ -1,6 +1,5 @@
 <?php
 include('header.php');
-include('config.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE films SET titre = ?, description = ?, genre = ?, sortie = ?, duree = ?, affiche = ? WHERE id_film = ?");
     $stmt->execute([
@@ -15,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: gestion_film.php");
     exit;
 }
-$stmt = $pdo->prepare("SELECT * FROM films WHERE id_film = ?");
+$stmt = $bdd->prepare("SELECT * FROM films WHERE id_film = ?");
 $stmt->execute([$_GET['id']]);
 $film = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>

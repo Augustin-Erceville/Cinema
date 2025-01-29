@@ -1,6 +1,5 @@
 <?php
 include('header.php');
-include('config.php');
 $films = $bdd->query("SELECT * FROM films")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>

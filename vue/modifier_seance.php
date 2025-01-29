@@ -1,7 +1,5 @@
 <?php
 include('header.php');
-include('config.php');
-
 $id_seance = $_GET['id'] ?? null;
 
 $stmt = $bdd->prepare("SELECT id_film, titre FROM films");

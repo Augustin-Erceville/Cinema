@@ -1,6 +1,5 @@
 <?php
 include('header.php');
-include('config.php');
 if (isset($_POST['envoyer'])) {
     $prenom = $_POST['prenom'];
     $nom = $_POST['nom'];

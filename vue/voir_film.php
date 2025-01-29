@@ -1,7 +1,5 @@
-<?php
-include('header.php');
-include('config.php');
-$stmt = $pdo->prepare("SELECT * FROM films WHERE id_film = ?");
+<?php include('header.php');
+$stmt = $bdd->prepare("SELECT * FROM films WHERE id_film = ?");
 $stmt->execute([$_GET['id']]);
 $film = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>

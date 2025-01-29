@@ -1,3 +1,4 @@
+<?php include('../src/bdd/config.php');?>
 <!DOCTYPE html>
 <html>
 <head>
