@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include('src/bdd/config.php');?>
+<?php include('../src/bdd/config.php');?>
 <html>
 <head>
     <title>Voir un Film</title>
@@ -38,8 +38,9 @@
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Administration</a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="gestion_film.php">Gestion des films</a></li>
+            <li><a class="dropdown-item" href="vue/gestion_film.php">Gestion des films</a></li>
             <li><a class="dropdown-item" href="gestion_seance.php">Gestion des séances</a></li>
         </ul>
     </li>
 </ul>
+<?php include('footer.php') ?>
