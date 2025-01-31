@@ -1,4 +1,6 @@
 <?php include('vue/header.php') ?>
+
+
 <section id="films" class="py-5">
     <div class="container">
         <h2 class="text-center text-primary mb-4">Films à l'Affiche</h2>
