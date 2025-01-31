@@ -31,13 +31,13 @@
         <a class="nav-link" aria-current="page" href="#">A Propos</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="contact.php">Contact</a>
+        <a class="nav-link" aria-current="page" href="vue/contact.php">Contact</a>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Mon Compte</a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="inscription.php">Inscription</a></li>
-            <li><a class="dropdown-item" href="connexion.php">Connexion</a></li>
+            <li><a class="dropdown-item" href="vue/inscription.php">Inscription</a></li>
+            <li><a class="dropdown-item" href="vue/connexion.php">Connexion</a></li>
         </ul>
     </li>
 </ul>
