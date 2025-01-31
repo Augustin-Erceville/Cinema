@@ -4,7 +4,7 @@ include('../src/repository/cinema.php');
 ?>
 <div class="container py-5">
     <h1>Ajouter un Film</h1>
-    <form method="POST" action="../src/repository/creer_film.php">
+    <form method="POST" action="">
         <div class="mb-3">
             <label for="titre" class="form-label">Titre</label>
             <input type="text" class="form-control" id="titre" name="titre" required>
