@@ -15,7 +15,6 @@
             <p><strong>Genre :</strong> Comédie</p>
             <p><strong>Résumé :</strong> Une série d'événements hilarants met à l'épreuve l'amitié de deux colocataires.</p>
         </div>
-
         <div class="film">
             <img src="affiche3.jpg" alt="Affiche du film 3">
             <h2>Titre du Film 3</h2>
