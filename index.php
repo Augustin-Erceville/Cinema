@@ -1,5 +1,4 @@
 <?php include('./vue/header.php') ?>
-<?php include('./src/bdd/config.php') ?>
 <section id="films" class="py-5">
     <div class="container">
         <h2 class="text-center text-primary mb-4">Films à l'Affiche</h2>
@@ -69,4 +68,3 @@
     </div>
 </section>
 <?php include('./vue/footer.php') ?>
->>>>>>> bca3d9087e9e79694e0dc36c3df40b12691a0a07
