@@ -11,7 +11,7 @@ class Config
         $this->bdd = new PDO("mysql:dbname=".$this->nomBDD.";host=".$this->serveur, $this->user, $this->password);
     }
 
-    public function getBdd(){
+    public function connexion(){
         return $this->bdd;
     }
 }

@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<?php include('../src/bdd/config.php');?>
+<?php include('../src/bdd/Config.php');?>
 <html>
 <head>
     <title>Voir un Film</title>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
-include('../src/bdd/config.php');
-include('../src/traitement/connexion.php');
+include('../src/bdd/Config.php');
 ?>
 <html>
 <head>
@@ -49,10 +48,10 @@ include('../src/traitement/connexion.php');
 
 <div class="container mt-3">
     <h1 class="mb-4">Connexion</h1>
-    <?php if (!empty($message)) : ?>
-        <div class="alert alert-danger"><?= htmlspecialchars($message) ?></div>
+    <?php if (!empty($_GET["erreur"])) : ?>
+        <div class="alert alert-danger"><?= htmlspecialchars($_GET["erreur"]) ?></div>
     <?php endif; ?>
-    <form action="" method="post">
+    <form action="../src/traitement/connexion.php" method="post">
         <div class="mb-3">
             <label for="email" class="form-label">Adresse mail</label>
             <input type="email" name="email" id="email" class="form-control" required>

@@ -1,5 +1,9 @@
+<?php
+require_once "src/modele/Users.php";
+session_start();
+?>
 <!DOCTYPE html>
-<?php include('src/bdd/config.php');?>
+<?php include('src/bdd/Config.php');?>
 <html>
 <head>
     <title>Voir un Film</title>
@@ -35,6 +39,9 @@
             <li><a class="dropdown-item" href="vue/connexion.php">Connexion</a></li>
         </ul>
     </li>
+    <?php
+        if(isset($_SESSION['user']) && unserialize($_SESSION['user'])->getRole() == "Admin"){
+    ?>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Administration</a>
         <ul class="dropdown-menu">
@@ -42,6 +49,9 @@
             <li><a class="dropdown-item" href="gestion_seance.php">Gestion des séances</a></li>
         </ul>
     </li>
+    <?php
+        }
+    ?>
 </ul>
 <section id="films" class="py-5">
     <div class="container">

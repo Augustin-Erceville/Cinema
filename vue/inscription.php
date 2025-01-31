@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
-include('../src/bdd/config.php');
-require "../src/traitement/inscription.php";
+include('../src/bdd/Config.php');
 ?>
 <html>
 <head>
@@ -49,7 +48,7 @@ require "../src/traitement/inscription.php";
 
 <div class="container mt-3">
     <h1>Inscription</h1>
-    <form action="" method="post">
+    <form action="../src/traitement/inscription.php" method="post">
         <div class="mb-3">
             <label for="prenom" class="form-label">Prénom</label><br>
             <input type="text" name="prenom" class="form-control" id="prenom" placeholder="Votre prénom" aria-label="default input example" required/>
@@ -84,8 +83,8 @@ require "../src/traitement/inscription.php";
     <p>
         Déjà un compte ? <a href="connexion.php">Se connecter</a>
 
-        <?php if (isset($message)) : ?>
-    <?= $message ?><p></p>
+        <?php if (isset($_GET["erreur"])) : ?>
+    <?= $_GET["erreur"] ?><p></p>
     <div class="alert alert-success" role="alert">
         Vous êtes connecter
     </div>

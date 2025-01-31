@@ -1,5 +1,5 @@
 <?php
-public class Films{
+class Films{
     private $titre;
     private $description;
     private $idFilm;

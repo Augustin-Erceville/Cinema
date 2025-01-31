@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include('../src/bdd/config.php');?>
+<?php include('../src/bdd/Config.php');?>
 <html>
 <head>
     <title>DugnyCiné - Catalogue</title>

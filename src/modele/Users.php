@@ -6,7 +6,7 @@ class Users{
     private $email;
     private $password;
     private $role;
-    private $telephone
+    private $telephone;
     private $naissance;
     public function __construct(array $donnees){
         $this->hydrate($donnees);
