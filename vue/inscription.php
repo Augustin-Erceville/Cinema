@@ -1,50 +1,7 @@
 <?php
-include ('header.php');
-
-if (isset($_POST['envoyer'])) {
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
-    $naissance = $_POST['naissance'];
-    $telephone = $_POST['telephone'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $role = "Client";
-
-    if (!empty($prenom) && !empty($nom) && !empty($naissance) && !empty($telephone) &&
-        !empty($email) && !empty($password)) {
-
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $req = $bdd->prepare('INSERT INTO users (prenom, nom, telephone, email, password, naissance, role) VALUES (:prenom, :nom, :telephone, :email, :password, :naissance, :role)');
-            $success = $req->execute([
-                'prenom' => $prenom,
-                'nom' => $nom,
-                'telephone' => $telephone,
-                'email' => $email,
-                'password' => password_hash($password, PASSWORD_DEFAULT),
-                'naissance' => $naissance,
-                'role' => $role
-            ]);
-
-            if ($success) {
-                $_SESSION['email'] = $email;
-                header('Location: index.php');
-                exit();
-            } else {$message = "Erreur lors de l'inscription. Veuillez réessayer.";}
-        } else {$message = "Adresse email invalide.";}
-    } else {$message = "Tous les champs sont obligatoires.";
-    }}
+include('header.php');
+include('../src/traitement/inscription.php');
 ?>
-
-<!DOCTYPE html>
-<html lang="FR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
 <div class="container">
     <h1>Inscription</h1>
     <form action="" method="post">
@@ -89,6 +46,4 @@ if (isset($_POST['envoyer'])) {
     </div>
     <?php endif; ?>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+<?php include('footer.php') ?>

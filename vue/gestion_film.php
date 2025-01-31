@@ -1,6 +1,6 @@
 <?php
-include ('header.php');
-$films = $pdo->query("SELECT * FROM films")->fetchAll(PDO::FETCH_ASSOC);
+include('header.php');
+$films = $bdd->query("SELECT * FROM films")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,5 +41,4 @@ $films = $pdo->query("SELECT * FROM films")->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
     </table>
 </div>
-</body>
-</html>
+<?php include('footer.php') ?>

@@ -1,4 +1,5 @@
-<?php include ('header.php') ?>
+
+<?php include ('vue/header.php') ?>
 <section id="films" class="py-5">
     <div class="container">
         <h2 class="text-center text-primary mb-4">Films à l'Affiche</h2>
@@ -41,7 +42,7 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <a href="#" class="btn btn-primary">Voir le catalogue complet</a>
+            <a href="vue/catalogue.php" class="btn btn-primary">Voir le catalogue complet</a>
         </div>
     </div>
 </section>
@@ -75,3 +76,4 @@
 </footer>
 </body>
 </html>
+<?php include('vue/footer.php') ?>

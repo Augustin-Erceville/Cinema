@@ -1,8 +1,7 @@
 <?php
-include ('header.php');
-
+include('header.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stmt = $pdo->prepare("INSERT INTO films (titre, description, genre, sortie, duree, affiche) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $bdd->prepare("INSERT INTO films (titre, description, genre, sortie, duree, affiche) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->execute([
         $_POST['titre'],
         $_POST['description'],
@@ -53,5 +52,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
 </div>
-</body>
-</html>
+<?php include('footer.php') ?>
