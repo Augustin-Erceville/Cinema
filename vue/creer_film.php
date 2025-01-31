@@ -1,22 +1,10 @@
 <?php
 include('header.php');
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stmt = $bdd->prepare("INSERT INTO films (titre, description, genre, sortie, duree, affiche) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->execute([
-        $_POST['titre'],
-        $_POST['description'],
-        $_POST['genre'],
-        $_POST['sortie'],
-        $_POST['duree'],
-        $_POST['affiche']
-    ]);
-    header("Location: gestion_film.php");
-    exit;
-}
+include('../src/repository/cinema.php');
 ?>
 <div class="container py-5">
     <h1>Ajouter un Film</h1>
-    <form method="POST">
+    <form method="POST" action="../src/repository/creer_film.php">
         <div class="mb-3">
             <label for="titre" class="form-label">Titre</label>
             <input type="text" class="form-control" id="titre" name="titre" required>
