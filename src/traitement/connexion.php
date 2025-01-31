@@ -9,7 +9,6 @@ error_reporting(E_ALL);
 $message = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupération des données du formulaire
     $email = htmlspecialchars(trim($_POST['email'] ?? ''));
     $password = trim($_POST['password'] ?? '');
     if (!empty($email) && !empty($password)) {
