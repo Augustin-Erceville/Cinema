@@ -6,6 +6,7 @@ class Films{
     private $genre;
     private $duree;
     private $affiche;
+    private $sortie;
 
     public function __construct($donnees)
     {
@@ -59,4 +60,24 @@ class Films{
     public function setIdFilm($idFilm){
         $this->idFilm = $idFilm;
     }
+    public function setId_film($idFilm){
+        $this->idFilm = $idFilm;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSortie()
+    {
+        return $this->sortie;
+    }
+
+    /**
+     * @param mixed $sortie
+     */
+    public function setSortie($sortie)
+    {
+        $this->sortie = $sortie;
+    }
+
 }

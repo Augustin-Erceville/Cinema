@@ -1,17 +1,17 @@
-<?php
-class Config
-{
-    private $nomBDD = 'projets_cinema';
-    private $serveur = 'localhost';
-    private $user= 'root';
-    private $password = '';
-    private $bdd;
-    public function __construct()
+    <?php
+    class Config
     {
-        $this->bdd = new PDO("mysql:dbname=".$this->nomBDD.";host=".$this->serveur, $this->user, $this->password);
-    }
+        private $nomBDD = 'projets_cinema';
+        private $serveur = 'localhost';
+        private $user= 'root';
+        private $password = '';
+        private $bdd;
+        public function __construct()
+        {
+            $this->bdd = new PDO("mysql:dbname=".$this->nomBDD.";host=".$this->serveur, $this->user, $this->password);
+        }
 
-    public function connexion(){
-        return $this->bdd;
+        public function connexion(){
+            return $this->bdd;
+        }
     }
-}

@@ -67,4 +67,4 @@
         </div>
     </div>
 </section>
-<?php include('./vue/footer.php') ?>
+<?php include('footer.php') ?>
