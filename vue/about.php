@@ -55,5 +55,4 @@
         <strong>Rejoignez-nous</strong> au Cinéma Dugny pour une expérience unique, où le plaisir du cinéma se mêle à la convivialité
         et à la culture locale. À bientôt dans notre salle ! 🎥
     </p>
-
 <?php include('footer.php') ?>
