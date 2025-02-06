@@ -12,7 +12,6 @@ class Films{
         $this->hydrate($donnees);
 
     }
-
     public function hydrate($donnees)
     {
         foreach ($donnees as $key => $value) {
