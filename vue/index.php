@@ -52,7 +52,7 @@
             <img src="https://via.placeholder.com/1200x400?text=Planning+des+Séances" class="img-fluid rounded" alt="Planning">
         </div>
         <div class="text-center mt-4">
-            <a href="planning.php" class="btn btn-primary">Voir le planning</a>
+            <a href="#" class="btn btn-primary">Voir le planning</a>
         </div>
     </div>
 </section>

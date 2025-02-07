@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.php">Accueil</a>
+                    <a class="nav-link" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="planning.php">Planning des Séances</a>
