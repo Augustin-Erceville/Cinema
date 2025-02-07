@@ -1,7 +1,9 @@
 <?php include('header.php');
-$stmt = $bdd->prepare("SELECT * FROM films WHERE id_film = ?");
-$stmt->execute([$_GET['id']]);
-$film = $stmt->fetch(PDO::FETCH_ASSOC);
+require_once "../src/modele/Films.php";
+require_once "../src/repository/FilmsRepository.php";
+$filmRepository = new FilmsRepository();
+$films = $filmRepository->getFilms();
+//var_dump($films);
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,13 +13,16 @@ $film = $stmt->fetch(PDO::FETCH_ASSOC);
 </head>
 <body>
 <div class="container py-5">
-    <h1>Détails du Film</h1>
-    <p><strong>Titre :</strong> <?= htmlspecialchars($film['titre']) ?></p>
-    <p><strong>Description :</strong> <?= htmlspecialchars($film['description']) ?></p>
-    <p><strong>Genre :</strong> <?= htmlspecialchars($film['genre']) ?></p>
-    <p><strong>Date de sortie :</strong> <?= htmlspecialchars($film['sortie']) ?></p>
-    <p><strong>Durée :</strong> <?= htmlspecialchars($film['duree']) ?></p>
-    <p><strong>Affiche :</strong> <img src="<?= htmlspecialchars($film['affiche']) ?>" alt="Affiche" style="max-width: 200px;"></p>
-    <a href="film.php" class="btn btn-secondary">Retour</a>
+    <h1>Détails du Film
+
+            <p><strong>Affiche :</strong> <img src="<?= htmlspecialchars($films[$_GET['id']]['affiche']) ?>" alt="Affiche" style="max-width: 200px;"></p>
+            <p><strong>Titre :</strong> <?= htmlspecialchars($films[$_GET['id']]['titre']) ?></p>
+            <p><strong>Description :</strong> <?= htmlspecialchars($films[$_GET['id']]['description']) ?></p>
+            <p><strong>Genre :</strong> <?= htmlspecialchars($films[$_GET['id']]['genre']) ?></p>
+            <p><strong>Date de sortie :</strong> <?= htmlspecialchars($films[$_GET['id']]['sortie']) ?></p>
+            <p><strong>Durée :</strong> <?= htmlspecialchars($films[$_GET['id']]['duree']) ?></p>
+            <a href="film.php" class="btn btn-secondary">Retour</a>
+
+
 </div>
 <?php include('footer.php') ?>
