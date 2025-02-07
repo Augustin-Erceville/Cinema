@@ -19,4 +19,10 @@ class FilmsRepository {
         }
         return $filmsObj;
     }
+    public function getFilmById($id) {
+        $films=  $this->bdd->connexion()->prepare("SELECT * FROM films WHERE id_film = :id");
+        $films->execute(["id"=>$id]);
+        $filmObj= new Films($films->fetch(PDO::FETCH_ASSOC));
+        return $filmObj;
+    }
 }
