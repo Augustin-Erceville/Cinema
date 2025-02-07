@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_POST['date_heure'],
         $_POST['salle']
     ]);
-    header("Location: gestion_seance.php");
+    header("Location: seance.php");
     exit;
 }
 ?>
