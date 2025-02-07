@@ -2,9 +2,7 @@
 require_once "../src/modele/Films.php";
 require_once "../src/repository/FilmsRepository.php";
 $filmRepository = new FilmsRepository();
-/** @var Films $films */
 $films = $filmRepository->getFilmById($_GET["id"]);
-//var_dump($films);
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +13,6 @@ $films = $filmRepository->getFilmById($_GET["id"]);
 <body>
 <div class="container py-5">
     <h1>Détails du Film
-
             <p><strong>Affiche : </strong> <img src="<?= htmlspecialchars($films->getAffiche()) ?>" alt="Affiche" style="max-width: 200px;"></p>
             <p><strong>Titre : </strong> <?= htmlspecialchars($films->getTitre()) ?></p>
             <p><strong>Description : </strong> <?= htmlspecialchars($films->getDescription()) ?></p>

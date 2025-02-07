@@ -12,13 +12,17 @@ class SeancesRepository {
 
     }
     public function getSeancesObj() {
-        $films =  $this->bdd->connexion()->query("SELECT * FROM seances")->fetchAll(PDO::FETCH_ASSOC);
+        $seances =  $this->bdd->connexion()->query("SELECT * FROM seances")->fetchAll(PDO::FETCH_ASSOC);
         $seanceObj = array();
-        foreach ($films as $seance) {
+        foreach ($seances as $seance) {
             $seanceObj[] = new Seances($seance);
-
         }
         return $seanceObj;
     }
-
+    public function getSeanceById($id) {
+        $seances=  $this->bdd->connexion()->prepare("SELECT * FROM seances WHERE id_seance = :id");
+        $seances->execute(["id"=>$id]);
+        $seanceObj= new Seances($seances->fetch(PDO::FETCH_ASSOC));
+        return $seanceObj;
+    }
 }

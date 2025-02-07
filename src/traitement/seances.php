@@ -7,4 +7,5 @@ $config = new Config();
 $bdd = $config->connexion();
 
 $seances = $bdd->query("SELECT * FROM seances")->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
