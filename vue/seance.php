@@ -2,12 +2,9 @@
 include ('header.php');
 require_once "../src/modele/Seances.php";
 require_once "../src/repository/SeancesRepository.php";
-
-$config = new Config();
-$db = $config->connexion();
-
-$seancesRepository = new SeancesRepository($db);
-$seances = $seancesRepository->findAll();
+$seanceRepository = new SeancesRepository();
+$seances = $seanceRepository->getSeances();
+$seances = $seanceRepository->getSeancesObj();
 ?>
 
 <div class="container py-5">
