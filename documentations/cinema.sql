@@ -1,31 +1,6 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1:3306
--- Généré le : ven. 07 fév. 2025 à 09:32
--- Version du serveur : 8.3.0
--- Version de PHP : 8.2.18
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de données : `projets_cinema`
---
-
--- --------------------------------------------------------
-
---
--- Structure de la table `films`
---
 
 DROP TABLE IF EXISTS `films`;
 CREATE TABLE IF NOT EXISTS `films` (
@@ -38,10 +13,6 @@ CREATE TABLE IF NOT EXISTS `films` (
     `affiche` varchar(2048) DEFAULT NULL,
     PRIMARY KEY (`id_film`)
     ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `films`
---
 
 INSERT INTO `films` (`id_film`, `titre`, `description`, `genre`, `sortie`, `duree`, `affiche`) VALUES
     (1, 'Avatar : La Voie de l\'eau', 'Se déroulant plus d’une décennie après les événements relatés dans le premier film, AVATAR : LA VOIE DE L’EAU raconte l\'histoire des membres de la famille Sully (Jake, Neytiri et leurs enfants), les épreuves auxquelles ils sont confrontés, les chemins qu’ils doivent emprunter pour se protéger les uns les autres, les batailles qu’ils doivent mener pour rester en vie et les tragédies qu\'ils endurent.', 'Science-fiction', '2022-12-16', '03:12:00', 'https://fr.web.img4.acsta.net/pictures/22/11/02/14/49/4565071.jpg'),
@@ -68,11 +39,15 @@ INSERT INTO `films` (`id_film`, `titre`, `description`, `genre`, `sortie`, `dure
 (24, 'Les Filles d\'Olfa', 'La vie d\'Olfa, Tunisienne et mère de 4 filles, oscille entre ombre et lumière. Un jour, ses deux filles aînées disparaissent. Pour combler leur absence, la réalisatrice Kaouther Ben Hania convoque des actrices professionnelles et met en place un dispositif de cinéma hors du commun afin de lever le voile sur l’histoire d’Olfa et ses filles. Un voyage intime fait d’espoir, de rébellion, de violence, de transmission et de sororité qui va questionner le fondement même de nos sociétés.', 'Drame', '2023-07-05', '01:47:00', 'https://fr.web.img2.acsta.net/c_310_420/pictures/23/05/12/15/32/5611737.jpg'),
 (25, 'Fast & Furious X', 'Après bien des missions et contre toute attente, Dom Toretto et sa famille ont su déjouer, devancer, surpasser et distancer tous les adversaires qui ont croisé leur route. Ils sont aujourd’hui face à leur ennemi le plus terrifiant et le plus intime : émergeant des brumes du passé, ce revenant assoiffé de vengeance est bien déterminé à décimer la famille en réduisant à néant tout ce à quoi, et surtout à qui Dom ait jamais tenu.\r\n\r\nDans FAST & FURIOUS 5 en 2011, Dom et son équipe avaient fait tomber l’infâme ponte de la drogue brésilienne, Hernan Reyes, en précipitant son empire du haut d’un pont de Rio De Janeiro. Ils étaient loin de se douter que son fils Dante, avait assisté impuissant à la scène et qu’il avait passé ces douze dernières années à échafauder le plan infernal qui exigerait de Dom un prix ultime.\r\n\r\nDante va débusquer et traquer Dom et sa famille aux quatre coins du monde, de Los Angeles aux catacombes de Rome, du Brésil à Londres et de l’Antarctique au Portugal. De nouvelles alliances vont se forger et de vieux ennemis réapparaitre. Mais tout va basculer quand Dom va comprendre que la cible principale de Dante n’est autre que son fils à peine âgé de 8 ans.', 'Action', '2023-05-17', '02:21:00', 'https://fr.web.img3.acsta.net/c_310_420/pictures/23/05/10/10/55/5129031.jpg');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `reservations`
---
+DROP TABLE IF EXISTS `reports`;
+CREATE TABLE IF NOT EXISTS `reports` (
+  `id_report` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(500) NOT NULL,
+  `email` varchar(500) NOT NULL,
+  `subject` varchar(2000) DEFAULT NULL,
+  `message` varchar(5000) NOT NULL,
+  PRIMARY KEY (`id_report`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `reservations`;
 CREATE TABLE IF NOT EXISTS `reservations` (
@@ -84,12 +59,6 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   KEY `fk_reservation_user` (`ref_user`),
   KEY `fk_reservation_seance` (`ref_seance`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `seances`
---
 
 DROP TABLE IF EXISTS `seances`;
 CREATE TABLE IF NOT EXISTS `seances` (
@@ -103,18 +72,8 @@ CREATE TABLE IF NOT EXISTS `seances` (
   KEY `fk_seance_film` (`ref_film`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Déchargement des données de la table `seances`
---
-
 INSERT INTO `seances` (`id_seance`, `ref_film`, `salle`, `place_dispo`, `date`, `heure`) VALUES
 (1, 24, '12', 100, '2025-04-18', '16:30:00');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `users`
---
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
@@ -127,15 +86,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `naissance` date NOT NULL,
   `password` varchar(5000) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Contraintes pour les tables déchargées
---
+INSERT INTO `users` (`id_user`, `nom`, `prenom`, `email`, `role`, `telephone`, `naissance`, `password`) VALUES
+(2, 'Nomdefamille', 'Prénom', 'a.erceville@lprs.fr', 'Admin', '0123456789', '2001-01-01', '$2y$10$.qWhmA4O5qn0ylLG06v.gO3amuBxjlHBSA1f9z/QdDyVFXtze8T3K'),
+(3, 'test', 'test', 'a@a.a', 'Admin', '0123456789', '1515-12-15', '$2y$10$CmstOHO/nkSc5QMLg55xe.DLg09uj3k2REm1ExVkfTVH0MMrinx.q'),
+(4, 'dgdpfgj', 'fgdv', 'z@z.e', 'Client', '1565545464', '5545-05-05', '$2y$10$BD/AFPjKnu/OZjCULv3uP.62ozPGHYeOancytlxNIyOaQ.m789DKG');
 
---
--- Contraintes pour la table `reservations`
---
+
 ALTER TABLE `reservations`
   ADD CONSTRAINT `fk_reservation_seance` FOREIGN KEY (`ref_seance`) REFERENCES `seances` (`id_seance`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_reservation_user` FOREIGN KEY (`ref_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE;
@@ -143,7 +101,3 @@ ALTER TABLE `reservations`
 ALTER TABLE `seances`
   ADD CONSTRAINT `fk_seance_film` FOREIGN KEY (`ref_film`) REFERENCES `films` (`id_film`) ON DELETE CASCADE;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

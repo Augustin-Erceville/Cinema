@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $userRepository->connexion($user);
         if (!empty($user->getIdUser())){
             $_SESSION['user'] = serialize($user);
-            header("Location: ../../index.php");
+            header("Location: ../../vue/index.php");
         }else{
             $message = "Le login/mdp n'a pas donné de résultat";
 

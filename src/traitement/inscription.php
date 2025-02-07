@@ -31,17 +31,17 @@ if (isset($_POST['envoyer'])) {
                 header('Location: ../../vue/connexion.php');
             } else {
                 $message = "Erreur lors de l'inscription. Veuillez réessayer.";
-                header('Location: ../../vue/insciption.php?erreur='.$message);
+                header('Location: ../../vue/inscription.php?erreur='.$message);
 
             }
         } else {
             $message = "Adresse email invalide.";
-            header('Location: ../../vue/insciption.php?erreur='.$message);
+            header('Location: ../../vue/inscription.php?erreur='.$message);
 
         }
     } else {
         $message = "Tous les champs sont obligatoires.";
-        header('Location: ../../vue/insciption.php?erreur='.$message);
+        header('Location: ../../vue/inscription.php?erreur='.$message);
     }
 }
 ?>
