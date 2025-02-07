@@ -8,7 +8,7 @@ $films = $filmRepository->getFilmsObj();
 ?>
 <div class="container py-5">
     <h1>Gestion des Films</h1>
-    <a href="creer_film.php" class="btn btn-success mb-3">➕</a>
+    <a href="film_create.php" class="btn btn-success mb-3">➕</a>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -33,9 +33,9 @@ $films = $filmRepository->getFilmsObj();
                     <td><?= htmlspecialchars($film->getSortie()) ?></td>
                     <td><?= htmlspecialchars($film->getDuree()) ?></td>
                     <td>
-                        <a href="voir_film.php?id=<?= $film->getIdFilm() ?>" class="btn btn-info btn-sm">👁️</a>
-                        <a href="modifier_film.php?id=<?= $film->getIdFilm() ?>" class="btn btn-warning btn-sm">✏️</a>
-                        <a href="supprimer_film.php?id=<?= $film->getIdFilm() ?>" class="btn btn-danger btn-sm">🗑️</a>
+                        <a href="film_read.php?id=<?= $film->getIdFilm() ?>" class="btn btn-info btn-sm">👁️</a>
+                        <a href="film_update.php?id=<?= $film->getIdFilm() ?>" class="btn btn-warning btn-sm">✏️</a>
+                        <a href="film_delete.php?id=<?= $film->getIdFilm() ?>" class="btn btn-danger btn-sm">🗑️</a>
                     </td>
                 </tr>
             <?php } ?>

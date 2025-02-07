@@ -18,6 +18,6 @@ $film = $stmt->fetch(PDO::FETCH_ASSOC);
     <p><strong>Date de sortie :</strong> <?= htmlspecialchars($film['sortie']) ?></p>
     <p><strong>Durée :</strong> <?= htmlspecialchars($film['duree']) ?></p>
     <p><strong>Affiche :</strong> <img src="<?= htmlspecialchars($film['affiche']) ?>" alt="Affiche" style="max-width: 200px;"></p>
-    <a href="gestion_film.php" class="btn btn-secondary">Retour</a>
+    <a href="film.php" class="btn btn-secondary">Retour</a>
 </div>
 <?php include('footer.php') ?>

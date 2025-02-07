@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_POST['affiche'],
         $_POST['id_film']
     ]);
-    header("Location: gestion_film.php");
+    header("Location: film.php");
     exit;
 }
 $stmt = $bdd->prepare("SELECT * FROM films WHERE id_film = ?");
