@@ -140,9 +140,6 @@ ALTER TABLE `reservations`
   ADD CONSTRAINT `fk_reservation_seance` FOREIGN KEY (`ref_seance`) REFERENCES `seances` (`id_seance`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_reservation_user` FOREIGN KEY (`ref_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE;
 
---
--- Contraintes pour la table `seances`
---
 ALTER TABLE `seances`
   ADD CONSTRAINT `fk_seance_film` FOREIGN KEY (`ref_film`) REFERENCES `films` (`id_film`) ON DELETE CASCADE;
 COMMIT;
