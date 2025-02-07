@@ -5,37 +5,37 @@
         <div class="row g-4">
             <div class="col-md-3">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300x400?text=Film+1" class="card-img-top" alt="Film 1">
+                    <img src="https://fr.web.img5.acsta.net/c_310_420/pictures/23/02/10/10/56/3228985.jpg" class="card-img-top" alt="Film 1">
                     <div class="card-body">
-                        <h5 class="card-title">Film 1</h5>
-                        <p class="card-text">Une aventure palpitante qui vous tiendra en haleine.</p>
+                        <h5 class="card-title">Creed III</h5>
+                        <p class="card-text">Adonis Creed affronte Damian, un ancien ami devenu rival, dans un combat pour l'honneur et la rédemption. Un affrontement explosif entre passé et présent.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300x400?text=Film+2" class="card-img-top" alt="Film 2">
+                    <img src="https://fr.web.img3.acsta.net/c_310_420/pictures/22/02/16/17/42/3125788.jpg" class="card-img-top" alt="Film 2">
                     <div class="card-body">
-                        <h5 class="card-title">Film 2</h5>
-                        <p class="card-text">Une comédie romantique à ne pas manquer.</p>
+                        <h5 class="card-title">The Batman</h5>
+                        <p class="card-text">Batman traque un tueur en série qui dévoile les secrets sombres de Gotham. Une lutte intense entre justice et corruption.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300x400?text=Film+3" class="card-img-top" alt="Film 3">
+                    <img src="https://fr.web.img3.acsta.net/c_310_420/pictures/23/03/20/14/57/4979368.jpg" class="card-img-top" alt="Film 3">
                     <div class="card-body">
-                        <h5 class="card-title">Film 3</h5>
-                        <p class="card-text">Un thriller captivant qui vous surprendra.</p>
+                        <h5 class="card-title">Super Mario Bros</h5>
+                        <p class="card-text">Mario et Luigi partent à l’aventure pour sauver la princesse Peach et le royaume des champignons. Une quête épique pleine de surprises et de dangers !</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300x400?text=Film+4" class="card-img-top" alt="Film 4">
+                    <img src="https://fr.web.img3.acsta.net/c_310_420/pictures/23/05/10/10/55/5129031.jpg" class="card-img-top" alt="Film 4">
                     <div class="card-body">
-                        <h5 class="card-title">Film 4</h5>
-                        <p class="card-text">Un drame poignant qui ne laissera personne indifférent.</p>
+                        <h5 class="card-title">Fast and Furious X</h5>
+                        <p class="card-text">Dom Toretto et sa famille affrontent une nouvelle menace mondiale. Une course folle pour protéger ceux qu’ils aiment, à pleine vitesse !</p>
                     </div>
                 </div>
             </div>
