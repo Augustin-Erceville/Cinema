@@ -1,8 +1,8 @@
 <?php
 class Seances {
 private int $id_seance;
-private string $refFilm;
-private string $salle;
+private int $refFilm;
+private int $salle;
 private int $placeDispo;
 private string $date;
 private string $heure;
