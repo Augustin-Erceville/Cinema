@@ -53,15 +53,19 @@
     }
     ?>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Liens vers les fichiers Bootstrap locaux -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
 <script>
     const messageField = document.getElementById('message');
     const charCount = document.getElementById('charCount');
 
     messageField.addEventListener('input', () => {
-        const remaining = 300 - messageField.value.length;
-        charCount.textContent = remaining;
+        charCount.textContent = 300 - messageField.value.length;
     });
 </script>
 
-<?php include('footer.php') ?>
+<?php include("footer.php") ?>
+
