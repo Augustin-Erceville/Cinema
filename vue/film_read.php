@@ -4,23 +4,19 @@ require_once "../src/repository/FilmsRepository.php";
 $filmRepository = new FilmsRepository();
 $films = $filmRepository->getFilmById($_GET["id"]);
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Voir un Film</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<div class="container py-5">
-    <h1>Détails du Film
-            <p><strong>Affiche : </strong> <img src="<?= htmlspecialchars($films->getAffiche()) ?>" alt="Affiche" style="max-width: 200px;"></p>
-            <p><strong>Titre : </strong> <?= htmlspecialchars($films->getTitre()) ?></p>
-            <p><strong>Description : </strong> <?= htmlspecialchars($films->getDescription()) ?></p>
-            <p><strong>Genre : </strong> <?= htmlspecialchars($films->getGenre()) ?></p>
-            <p><strong>Date de sortie : </strong> <?= htmlspecialchars($films->getSortie()) ?></p>
-            <p><strong>Durée : </strong> <?= htmlspecialchars($films->getDuree()) ?></p>
-            <a href="film.php" class="btn btn-secondary">Retour</a>
-
-
-</div>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-3">
+                <img class="rounded shadow" src="<?= htmlspecialchars($films->getAffiche()) ?>" alt="Affiche" style="max-width: 100%;">
+            </div>
+            <div class="col bg-info-subtle text-dark rounded shadow">
+                <h1 class="text-center mt-5"><?= htmlspecialchars($films->getTitre()) ?></h1>
+                <p class="fs-5" style="text-align: justify"><?= htmlspecialchars($films->getDescription()) ?></p>
+                <h2>Caractéristiques</h2>
+                <h4><span class="badge rounded-pill text-bg-primary">Genre : <?= htmlspecialchars($films->getGenre()) ?></span>
+                    <span class="badge rounded-pill text-bg-danger">Date de sortie : <?= htmlspecialchars($films->getSortie()) ?></span>
+                    <span class="badge rounded-pill text-bg-secondary">Durée : <?= htmlspecialchars($films->getDuree()) ?></span></h4>
+            </div>
+        </div>
+    </div>
 <?php include('footer.php') ?>
