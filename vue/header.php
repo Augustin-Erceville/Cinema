@@ -53,6 +53,7 @@ session_start();
                 <li><a class="dropdown-item" href="user.php">Gestion des utilisateurs</a></li>
                 <li><a class="dropdown-item" href="film.php">Gestion des films</a></li>
                 <li><a class="dropdown-item" href="seance.php">Gestion des séances</a></li>
+                <li><a class="dropdown-item" href="report.php">Gestion des reports</a></li>
             </ul>
         </li>
         <?php
