@@ -1,4 +1,5 @@
-<?php include ("header.php")?>
+<?php include ("header.php") ?>
+
 <section id="films" class="py-5">
     <div class="container">
         <h2 class="text-center text-primary mb-4">Films à l'Affiche</h2>
@@ -9,33 +10,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Creed III</h5>
                         <p class="card-text">Adonis Creed affronte Damian, un ancien ami devenu rival, dans un combat pour l'honneur et la rédemption. Un affrontement explosif entre passé et présent.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://fr.web.img3.acsta.net/c_310_420/pictures/22/02/16/17/42/3125788.jpg" class="card-img-top" alt="Film 2">
-                    <div class="card-body">
-                        <h5 class="card-title">The Batman</h5>
-                        <p class="card-text">Batman traque un tueur en série qui dévoile les secrets sombres de Gotham. Une lutte intense entre justice et corruption.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://fr.web.img3.acsta.net/c_310_420/pictures/23/03/20/14/57/4979368.jpg" class="card-img-top" alt="Film 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Super Mario Bros</h5>
-                        <p class="card-text">Mario et Luigi partent à l’aventure pour sauver la princesse Peach et le royaume des champignons. Une quête épique pleine de surprises et de dangers !</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://fr.web.img3.acsta.net/c_310_420/pictures/23/05/10/10/55/5129031.jpg" class="card-img-top" alt="Film 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Fast and Furious X</h5>
-                        <p class="card-text">Dom Toretto et sa famille affrontent une nouvelle menace mondiale. Une course folle pour protéger ceux qu’ils aiment, à pleine vitesse !</p>
                     </div>
                 </div>
             </div>
@@ -63,28 +37,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>Avatar: La Voie de l'eau</td>
-                    <td>2025-02-10</td>
-                    <td>20:00</td>
-                    <td>Salle 1</td>
-                    <td>3h12</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Spider-Man: No Way Home</td>
-                    <td>2025-02-11</td>
-                    <td>18:00</td>
-                    <td>Salle 2</td>
-                    <td>2h28</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Inception</td>
-                    <td>2025-02-12</td>
-                    <td>22:00</td>
-                    <td>Salle 3</td>
-                    <td>2h42</td>
+                    <td colspan="6" class="text-center">Les données seront ajoutées ici manuellement ou via une autre source.</td>
                 </tr>
                 </tbody>
             </table>
@@ -106,4 +59,5 @@
         </div>
     </div>
 </section>
+
 <?php include('footer.php') ?>
