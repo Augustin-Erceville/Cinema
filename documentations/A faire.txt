@@ -1,0 +1,16 @@
+Vue
+    - Film à l'affiche via bdd
+    - Planning des séances via bdd
+    - Formulaire de reservation
+    - Design user.php
+    - Edition des films
+    - Edition des utilisateur (roles)
+    - Seance.php (création, edition, suppression)
+    - Réponse aux contenue des reports
+    - Suppression des reports
+
+Repository
+    - Gestion des films (insert, delete)
+    - Gestion des reports (insert, delete)
+    - Gestion des séances (select, insert, delete)
+    - Suppression des utilisateurs (delete)
