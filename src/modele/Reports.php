@@ -35,6 +35,11 @@ class Reports
         $this->id_report = $id_report;
     }
 
+    public function setId_Report($id_report)
+    {
+        $this->id_report = $id_report;
+    }
+
     public function getName()
     {
         return $this->name;
