@@ -6,5 +6,5 @@ require_once "../repository/ReportsRepository.php";
 $config = new Config();
 $bdd = $config->connexion();
 
-$films = $bdd->query("SELECT * FROM reports")->fetchAll(PDO::FETCH_ASSOC);
+$reports = $bdd->query("SELECT * FROM reports")->fetchAll(PDO::FETCH_ASSOC);
 ?>
