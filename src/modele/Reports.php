@@ -2,11 +2,11 @@
 
 class Reports
 {
-    private int $id_report;
-    private string $name;
-    private string $subject;
-    private string $email;
-    private string $message;
+    private  $id_report;
+    private  $name;
+    private  $subject;
+    private  $email;
+    private  $message;
 
     public function __construct($donnees)
     {
@@ -25,52 +25,52 @@ class Reports
 
     }
 
-    public function getIdReport(): int
+    public function getIdReport()
     {
         return $this->id_report;
     }
 
-    public function setIdReport(int $id_report): void
+    public function setIdReport(int $id_report)
     {
         $this->id_report = $id_report;
     }
 
-    public function getName(): int
+    public function getName()
     {
         return $this->name;
     }
 
-    public function setName(int $name): void
+    public function setName(string $name)
     {
         $this->name = $name;
     }
 
-    public function getSubject(): int
+    public function getSubject()
     {
         return $this->subject;
     }
 
-    public function setSubject(int $subject): void
+    public function setSubject(string $subject)
     {
         $this->subject = $subject;
     }
 
-    public function getEmail(): int
+    public function getEmail()
     {
         return $this->email;
     }
 
-    public function setEmail(int $email): void
+        public function setEmail(string $email)
     {
         $this->email = $email;
     }
 
-    public function getMessage(): string
+    public function getMessage()
     {
         return $this->message;
     }
 
-    public function setMessage(string $message): void
+    public function setMessage(string $message)
     {
         $this->message = $message;
     }
