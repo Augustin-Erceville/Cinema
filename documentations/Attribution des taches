@@ -1,0 +1,31 @@
+Résumé passage du prof:
+-1 faire en sorte de ne pas pouvoir utiliser le meme mail pour l'inscription
+-2 l'entiereté de la partie réservation
+-3 Ajout et modification de film
+-4 Possibilité à l'utilisateur de modifer ses propres informations
+-5 Corriger la modification admin d'un utilisateur
+-6 ajout de l'envoi d'email via php mailer
+-7 Ajouter les validations et erreur des actions d'un utilisateur ou d'un admin
+-8 Utilisation d'un API
+-9 Ajouts d'un gps
+-10 Ajout d'un moyen de simplifier la recherche d'adresse
+-11 Gestion de seances: Modifications/Ajout/Aperçu/Suppression
+-12 Ajouter une gestion des reservations
+-13 édition du role des utilisateurs
+
+
+
+Attribution des taches:
+-1 = Daniel
+-2 = Sohaib
+-3 = Soufiane
+-4 = Augustin
+-5 = Augustin
+-6 = Soufiane
+-7 = Mehdi
+-8 = ...
+-9 = Soufiane
+-10 = Soufiane
+-11 = Daniel
+-12 = Sohaib
+-13 = Mehdi
