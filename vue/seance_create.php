@@ -1,42 +1,57 @@
 <?php
-include('header.php');
-$stmt = $bdd->prepare("SELECT id_film, titre FROM films");
-$stmt->execute();
-$films = $stmt->fetchAll(PDO::FETCH_ASSOC);
+include 'header.php'
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stmt = $bdd->prepare("INSERT INTO seances (id_film, date_heure, salle) VALUES (?, ?, ?)");
-    $stmt->execute([
-        $_POST['id_film'],
-        $_POST['date_heure'],
-        $_POST['salle']
-    ]);
-    header("Location: seance.php");
-    exit;
+    // Récupérer les valeurs soumises par le formulaire
+    $ref_film = $_POST['ref_film'];
+    $date = $_POST['date'];
+    $heure = $_POST['heure'];
+    $salle = $_POST['salle'];
+    $place_dispo = $_POST['place_dispo'];
+
+
+    $query = "INSERT INTO seances (ref_film, date, heure, salle, place_dispo) 
+              VALUES (:ref_film, :date, :heure, :salle, :place_dispo)";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(':ref_film', $ref_film);
+    $stmt->bindParam(':date', $date);
+    $stmt->bindParam(':heure', $heure);
+    $stmt->bindParam(':salle', $salle);
+    $stmt->bindParam(':place_dispo', $place_dispo);
+
+    if ($stmt->execute()) {
+        echo "<h3>La séance a été ajoutée avec succès !</h3>";
+    } else {
+        echo "<h3>Une erreur s'est produite lors de l'ajout de la séance.</h3>";
+    }
 }
 ?>
 
-<div class="container py-5">
-    <h1>Ajouter une Séance</h1>
-    <form method="POST">
-        <div class="mb-3">
-            <label for="id_film" class="form-label">Film</label>
-            <select class="form-select" id="id_film" name="id_film" required>
-                <?php foreach ($films as $film): ?>
-                    <option value="<?= $film['id_film'] ?>"><?= htmlspecialchars($film['titre']) ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="date_heure" class="form-label">Date et Heure</label>
-            <input type="datetime-local" class="form-control" id="date_heure" name="date_heure" required>
-        </div>
-        <div class="mb-3">
-            <label for="salle" class="form-label">Salle</label>
-            <input type="text" class="form-control" id="salle" name="salle" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Ajouter</button>
-    </form>
-</div>
 
-<?php include('footer.php'); ?>
+<h1>Ajouter une séance de cinéma</h1>
+<form method="POST">
+    <label for="ref_film">Référence du film (ID) :</label>
+    <input type="number" id="ref_film" name="ref_film" required>
+
+    <label for="date">Date de la séance :</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="heure">Heure de la séance :</label>
+    <input type="datetime-local" id="heure" name="heure" required>
+
+    <label for="salle">Salle :</label>
+    <input type="text" id="salle" name="salle" required>
+
+    <label for="place_dispo">Nombre de places disponibles :</label>
+    <input type="number" id="place_dispo" name="place_dispo" min="1" required>
+
+    <button type="submit">Ajouter la séance</button>
+</form>
+<?php include 'footer.php'?>
