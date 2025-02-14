@@ -37,11 +37,18 @@
     </form>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = htmlspecialchars($_POST['name']);
-        $email = htmlspecialchars($_POST['email']);
-        $subject = htmlspecialchars($_POST['subject']);
-        $message = htmlspecialchars($_POST['message']);
+    require_once "../src/bdd/Config.php";
+    $config=new Config();
+    $bdd = $config->connexion();
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $stmt = $bdd->prepare("INSERT INTO reports ( name, email, subject, message) VALUES ( ?, ?, ?, ?)");
+    $stmt->execute([
+        $name = htmlspecialchars($_POST['name']),
+        $email = htmlspecialchars($_POST['email']),
+        $subject = htmlspecialchars($_POST['subject']),
+        $message = htmlspecialchars($_POST['message']),
+    ]);
+
 
         echo "<div class='alert alert-success mt-4'>";
         echo "<h2 class='text-success'>Votre message a été envoyé avec succès !</h2>";
@@ -62,7 +69,7 @@
     const charCount = document.getElementById('charCount');
 
     messageField.addEventListener('input', () => {
-        charCount.textContent = 300 - messageField.value.length;
+        charCount.textContent = 500 - messageField.value.length;
     });
 </script>
 

@@ -2,82 +2,81 @@
 
 class Reports
 {
-    private int $id_report;
-    private int $ref_film;
-    private int $salles;
-    private int $place_dispo;
-    private String $date;
-    private string $heure;
-    public function __construct($donnees){
+    private  $id_report;
+    private  $name;
+    private  $subject;
+    private  $email;
+    private  $message;
+
+    public function __construct($donnees)
+    {
         $this->hydrate($donnees);
     }
-    public function hydrate($donnees){
+
+    public function hydrate($donnees)
+    {
         foreach ($donnees as $key => $value) {
-            $method = 'set'.ucfirst($key);
+            $method = 'set' . ucfirst($key);
             if (method_exists($this, $method)) {
                 $this->$method($value);
             }
         }
 
 
-}
+    }
 
-    public function getIdReport(): int
+    public function getIdReport()
     {
         return $this->id_report;
     }
 
-    public function setIdReport(int $id_report): void
+    public function setIdReport(int $id_report)
     {
         $this->id_report = $id_report;
     }
 
-    public function getRefFilm(): int
+    public function setId_Report($id_report)
     {
-        return $this->ref_film;
+        $this->id_report = $id_report;
     }
 
-    public function setRefFilm(int $ref_film): void
+    public function getName()
     {
-        $this->ref_film = $ref_film;
+        return $this->name;
     }
 
-    public function getSalles(): int
+    public function setName(string $name)
     {
-        return $this->salles;
+        $this->name = $name;
     }
 
-    public function setSalles(int $salles): void
+    public function getSubject()
     {
-        $this->salles = $salles;
+        return $this->subject;
     }
 
-    public function getPlaceDispo(): int
+    public function setSubject(string $subject)
     {
-        return $this->place_dispo;
+        $this->subject = $subject;
     }
 
-    public function setPlaceDispo(int $place_dispo): void
+    public function getEmail()
     {
-        $this->place_dispo = $place_dispo;
+        return $this->email;
     }
 
-    public function getDate(): string
+        public function setEmail(string $email)
     {
-        return $this->date;
+        $this->email = $email;
     }
 
-    public function setDate(string $date): void
+    public function getMessage()
     {
-        $this->date = $date;
+        return $this->message;
     }
 
-    public function getHeure(): string
+    public function setMessage(string $message)
     {
-        return $this->heure;
+        $this->message = $message;
     }
-
-    public function setHeure(string $heure): void
-    {
-        $this->heure = $heure;
-    }
+}

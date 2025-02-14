@@ -13,6 +13,33 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://fr.web.img3.acsta.net/c_310_420/pictures/22/02/16/17/42/3125788.jpg" class="card-img-top" alt="Film 2">
+                    <div class="card-body">
+                        <h5 class="card-title">The Batman</h5>
+                        <p class="card-text">Batman traque un tueur en série qui dévoile les secrets sombres de Gotham. Une lutte intense entre justice et corruption.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://fr.web.img3.acsta.net/c_310_420/pictures/23/03/20/14/57/4979368.jpg" class="card-img-top" alt="Film 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Super Mario Bros</h5>
+                        <p class="card-text">Mario et Luigi partent à l’aventure pour sauver la princesse Peach et le royaume des champignons. Une quête épique pleine de surprises et de dangers !</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://fr.web.img3.acsta.net/c_310_420/pictures/23/05/10/10/55/5129031.jpg" class="card-img-top" alt="Film 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Fast and Furious X</h5>
+                        <p class="card-text">Dom Toretto et sa famille affrontent une nouvelle menace mondiale. Une course folle pour protéger ceux qu’ils aiment, à pleine vitesse !</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="text-center mt-4">
             <a href="catalogue.php" class="btn btn-light text-dark border border-primary shadow">📚 Voir le catalogue complet</a>

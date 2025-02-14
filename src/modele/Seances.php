@@ -1,11 +1,11 @@
 <?php
 class Seances {
-private int $id_seance;
-private int $refFilm;
-private int $salle;
-private int $placeDispo;
-private string $date;
-private string $heure;
+private $id_seance;
+private $refFilm;
+private $salle;
+private $placeDispo;
+private $date;
+private $heure;
 
 public function __construct(array $data) {
 $this->id_seance = $data['id_seance'] ?? null;

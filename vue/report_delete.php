@@ -3,9 +3,10 @@ include('header.php');
 require_once "../src/bdd/Config.php";
 $config = new Config();
 $bdd = $config->connexion();
-$stmt = $bdd->prepare("DELETE FROM films WHERE id_film = ?");
+$stmt = $bdd->prepare("DELETE FROM reports WHERE id_report = ?");
 $stmt->execute([$_GET['id']]);
-header("Location: film.php");
+header("Location: reports.php");
+
 exit;
 include('footer.php')
 ?>

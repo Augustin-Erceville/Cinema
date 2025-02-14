@@ -1,6 +1,5 @@
 <?php
 include('header.php');
-include('../src/repository/cinema.php');
 ?>
 <div class="container py-5">
     <h1>Ajouter un Film</h1>
