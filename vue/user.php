@@ -1,5 +1,10 @@
 <?php
 include ('header.php');
+require_once "../src/modele/Users.php";
+require_once "../src/repository/UsersRepository.php";
+$usersRepository = new UsersRepository();
+$users = $usersRepository->getAllUsers();
+
 function recuperation_utilisateur() {
     try {
         $bdd = new PDO('mysql:host=localhost;dbname=projets_cinema;charset=utf8mb4', 'root', '');
@@ -34,6 +39,7 @@ $utilisateurs = recuperation_utilisateur();
         <th>Date naissance</th>
         <th>Numéro tel</th>
         <th>Email</th>
+        <th>Rôle</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -46,6 +52,7 @@ $utilisateurs = recuperation_utilisateur();
                 <td><?= htmlspecialchars($utilisateur['naissance']); ?></td>
                 <td><?= htmlspecialchars($utilisateur['telephone']); ?></td>
                 <td><?= htmlspecialchars($utilisateur['email']); ?></td>
+                <td><?= htmlspecialchars($utilisateur['role']); ?></td>
                 <td>
                     <form method="POST" action="">
                         <input type="hidden" name="id_user" value="<?= $utilisateur['id_user']; ?>">
@@ -62,7 +69,7 @@ $utilisateurs = recuperation_utilisateur();
         <?php endforeach; ?>
     <?php else: ?>
         <tr>
-            <td colspan="7">Aucun utilisateur trouvé.</td>
+            <td colspan="8">Aucun utilisateur trouvé.</td>
         </tr>
     <?php endif; ?>
     </tbody>
