@@ -1,77 +1,58 @@
 <?php
 include ('header.php');
-require_once "../src/modele/Users.php";
+require_once "../src/bdd/Config.php";
 require_once "../src/repository/UsersRepository.php";
-$usersRepository = new UsersRepository();
-$users = $usersRepository->getAllUsers();
+require_once "../src/modele/Users.php";
 
-function recuperation_utilisateur() {
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=projets_cinema;charset=utf8mb4', 'root', '');
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $req = $bdd->prepare("SELECT * FROM users");
-        $req->execute();
-        return $req->fetchAll(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-        die("Erreur de connexion à la base de données : " . $e->getMessage());
-    }
-}
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_user'])) {
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=projets_cinema;charset=utf8mb4', 'root', '');
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$config = new Config();
+$bdd = $config->connexion();
+$usersRepo = new UsersRepository($bdd);
 
-        $req = $bdd->prepare("DELETE FROM users WHERE id_user = :id_user");
-        $req->bindParam(':id_user', $_POST['id_user'], PDO::PARAM_INT);
-        $req->execute();
-    } catch (PDOException $e) {
-        die("Erreur lors de la suppression : " . $e->getMessage());
-    }
-}
-$utilisateurs = recuperation_utilisateur();
+$users = $usersRepo->getUsers();
 ?>
 
-<table>
-    <thead>
-    <tr>
-        <th>Prénom</th>
-        <th>Nom de famille</th>
-        <th>Date naissance</th>
-        <th>Numéro tel</th>
-        <th>Email</th>
-        <th>Rôle</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php if (!empty($utilisateurs)): ?>
-        <?php foreach ($utilisateurs as $utilisateur): ?>
-            <tr>
-                <td><?= htmlspecialchars($utilisateur['prenom']); ?></td>
-                <td><?= htmlspecialchars($utilisateur['nom']); ?></td>
-                <td><?= htmlspecialchars($utilisateur['naissance']); ?></td>
-                <td><?= htmlspecialchars($utilisateur['telephone']); ?></td>
-                <td><?= htmlspecialchars($utilisateur['email']); ?></td>
-                <td><?= htmlspecialchars($utilisateur['role']); ?></td>
-                <td>
-                    <form method="POST" action="">
-                        <input type="hidden" name="id_user" value="<?= $utilisateur['id_user']; ?>">
-                        <button type="submit" class="border rounded border-danger bg-danger-subtle px-2 py-1" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
-                            Supprimer
-                        </button>
-                    </form>
-                    <form method="POST" action="user_update.php" style="display: inline;">
-                        <input type="hidden" name="id_user" value="<?= $utilisateur['id_user']; ?>">
-                        <button type="submit" class="border rounded border-primary bg-primary-subtle px-2 py-1">Éditer</button>
-                    </form>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    <?php else: ?>
+<div class="container py-5">
+    <h1>Gestion des Utilisateurs</h1>
+    <a href="user_create.php" class="btn btn-success mb-3">➕</a>
+    <table class="table table-striped">
+        <thead>
         <tr>
-            <td colspan="8">Aucun utilisateur trouvé.</td>
+            <th>ID</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Rôle</th>
+            <th>Actions</th>
         </tr>
-    <?php endif; ?>
-    </tbody>
-</table>
-<?php include('footer.php') ?>
+        </thead>
+        <tbody>
+        <?php if (!empty($users)){ ?>
+            <?php foreach ($users as $user){
+                $userId = $user->getIdUser();
+                $encodedId = $userId !== null ? urlencode($userId) : '#';
+                ?>
+                <tr>
+                    <td><?= $userId !== null ? htmlspecialchars($userId) : 'N/A' ?></td>
+                    <td><?= htmlspecialchars($user->getPrenom()) ?></td>
+                    <td><?= htmlspecialchars($user->getNom()) ?></td>
+                    <td><?= htmlspecialchars($user->getEmail()) ?></td>
+                    <td><?= htmlspecialchars($user->getTelephone()) ?></td>
+                    <td><?= htmlspecialchars($user->getRole()) ?></td>
+                    <td>
+                        <a href="user_read.php?id=<?= $encodedId ?>" class="btn btn-info btn-sm">👁️</a>
+                        <a href="user_update.php?id=<?= $encodedId ?>" class="btn btn-warning btn-sm">✏️</a>
+                        <a href="user_delete.php?id=<?= $encodedId ?>" class="btn btn-danger btn-sm">🗑️</a>
+                    </td>
+                </tr>
+            <?php } ?>
+        <?php }else{ ?>
+            <tr>
+                <td colspan="7" class="text-center">Aucun utilisateur trouvé.</td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+</div>
+
+<?php include('footer.php'); ?>

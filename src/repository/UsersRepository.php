@@ -1,65 +1,92 @@
 <?php
+require_once "../src/modele/Users.php";
 
-class UsersRepository
-{
+class UsersRepository {
     private $bdd;
 
-    public function __construct()
-    {
-        $this->bdd = new Config();
+    public function __construct($bdd) {
+        $this->bdd = $bdd;
     }
 
-    public function inscription(Users $user)
-    {
-
-        $req = $this->bdd->connexion()->prepare('INSERT INTO users (prenom, nom, telephone, email, password, naissance, role) VALUES (:prenom, :nom, :telephone, :email, :password, :naissance, :role)');
-        $success = $req->execute([
-            'prenom' => $user->getPrenom(),
-            'nom' => $user->getNom(),
-            'telephone' => $user->getTelephone(),
-            'email' => $user->getEmail(),
-            'password' => password_hash($user->getPassword(), PASSWORD_DEFAULT),
-            'naissance' => $user->getNaissance(),
-            'role' => $user->getRole()
-        ]);
-        return $success;
-    }
-
-    public function connexion(Users $user){
-        $req = $this->bdd->connexion()->prepare('SELECT * FROM users WHERE email = :email');
-        $req->execute([
-            'email' => $user->getEmail()
-        ]);
-        $res = $req->fetch();
-        if($res && password_verify($user->getPassword(), $res['password'])){
-            $user->setRole($res['role']);
-            $user->setPrenom($res['prenom']);
-            $user->setTelephone($res['telephone']);
-            $user->setEmail($res['email']);
-            $user->setNaissance($res['naissance']);
-            $user->setIdUser($res['id_user']);
-        }
-        return $user;
-    }
-
-    public function getAllUsers()
-    {
+    public function getUsers() {
+        $query = $this->bdd->prepare("SELECT * FROM users");
+        $query->execute();
         $users = [];
-        $req = $this->bdd->connexion()->prepare('SELECT * FROM users ');
-        $req->execute();
-        $res = $req->fetchAll();
-        foreach ($res as $user) {
-            $users[] = new Users([
-                'idUser' => $user["id_user"],
-                'prenom' => $user["prenom"],
-                'nom' => $user["nom"],
-                'naissance' => $user["naissance"],
-                'telephone' => $user["telephone"],
-                'email' => $user["email"],
-                'password' => $user["password"],
-                'role' => $user["role"]
-            ]);
+
+        while ($data = $query->fetch(PDO::FETCH_ASSOC)) {
+            $users[] = new Users($data);
         }
         return $users;
     }
+
+    public function getUserById($id) {
+        $query = $this->bdd->prepare("SELECT * FROM users WHERE id_user = :id");
+        $query->execute(['id' => $id]);
+        $data = $query->fetch(PDO::FETCH_ASSOC);
+
+        if ($data) {
+            return new Users($data);
+        }
+        return null;
+    }
+
+    public function inscription(Users $user) {
+        $checkReq = $this->bdd->prepare('SELECT id_user FROM users WHERE email = :email');
+        $checkReq->execute(['email' => $user->getEmail()]);
+
+        if ($checkReq->fetch()) {
+            return false; // L'utilisateur existe déjà
+        }
+
+        $req = $this->bdd->prepare(
+            'INSERT INTO users (prenom, nom, telephone, email, password, naissance, role) 
+             VALUES (:prenom, :nom, :telephone, :email, :password, :naissance, :role)'
+        );
+
+        return $req->execute([
+            'prenom'    => $user->getPrenom(),
+            'nom'       => $user->getNom(),
+            'telephone' => $user->getTelephone(),
+            'email'     => $user->getEmail(),
+            'password'  => password_hash($user->getPassword(), PASSWORD_DEFAULT),
+            'naissance' => $user->getNaissance(),
+            'role'      => $user->getRole()
+        ]);
+    }
+
+    public function connexion($email, $password) {
+        $req = $this->bdd->prepare('SELECT * FROM users WHERE email = :email');
+        $req->execute(['email' => $email]);
+        $res = $req->fetch();
+
+        if ($res && password_verify($password, $res['password'])) {
+            return new Users($res);
+        }
+        return null;
+    }
+
+    public function updateUser(Users $user) {
+        $req = $this->bdd->prepare(
+            'UPDATE users 
+             SET prenom = :prenom, nom = :nom, telephone = :telephone, 
+                 email = :email, naissance = :naissance, role = :role 
+             WHERE id_user = :id_user'
+        );
+
+        return $req->execute([
+            'id_user'   => $user->getIdUser(),
+            'prenom'    => $user->getPrenom(),
+            'nom'       => $user->getNom(),
+            'telephone' => $user->getTelephone(),
+            'email'     => $user->getEmail(),
+            'naissance' => $user->getNaissance(),
+            'role'      => $user->getRole()
+        ]);
+    }
+
+    public function deleteUser($id) {
+        $req = $this->bdd->prepare('DELETE FROM users WHERE id_user = :id');
+        return $req->execute(['id' => $id]);
+    }
 }
+?>
