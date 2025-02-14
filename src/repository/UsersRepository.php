@@ -42,7 +42,7 @@ class UsersRepository
         return $user;
     }
 
-    public function gesAllUsers()
+    public function getAllUsers()
     {
         $users = [];
         $req = $this->bdd->connexion()->prepare('SELECT * FROM users ');
