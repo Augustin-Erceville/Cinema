@@ -9,7 +9,6 @@ Vue
     - Edition des utilisateur (roles)
     - Seance.php (création, edition, suppression)
     - Réponse aux contenue des reports
-    - Suppression des reports
 
 Repository
     - Gestion des films (insert, delete)
