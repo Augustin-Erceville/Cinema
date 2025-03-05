@@ -2,8 +2,49 @@
 include('header.php');
 require_once "../src/modele/Films.php";
 require_once "../src/repository/FilmsRepository.php";
+require_once "../src/bdd/Config.php";
 $filmRepository = new FilmsRepository();
 $films = $filmRepository->getFilmById($_GET["id"]);
+
+$config = new Config();
+$bdd = $config->connexion();
+
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    die("ID film manquant.");
+}
+
+$filmId = $_GET['id'];
+$film = $filmRepository->getFilmById($filmId);
+
+if (!$film) {
+    die("Film non trouvé.");
+}
+
+// Traitement du formulaire de mise à jour
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $titre = $_POST['titre'] ?? '';
+    $description = $_POST['description'] ?? '';
+    $duree = $_POST['duree'] ?? '';
+    $genre = $_POST['genre'] ?? '';
+    $sortie = $_POST['sortie'] ?? '';
+    $affiche = $_POST['affiche'] ?? '';
+
+    // Mettre à jour l'objet film
+    $film->setTitre($titre);
+    $film->setDescription($description);
+    $film->setDuree($duree);
+    $film->setGenre($genre);
+    $film->setSortie($sortie);
+    $film->setAffiche($affiche);
+
+    // Enregistrement en base de données
+    if ($filmRepository->updateFilm($film)) {
+        echo "<div class='alert alert-success'>Film mis à jour avec succès.</div>";
+    } else {
+        echo "<div class='alert alert-danger'>Erreur lors de la mise à jour.</div>";
+    }
+}
+
 ?>
     <div class="container py-5">
         <h1 class="text-center">Modifier le Film</h1>
@@ -52,7 +93,7 @@ $films = $filmRepository->getFilmById($_GET["id"]);
                 </div>
             </div>
             <div class="d-grid gap-2 my-3">
-            <button type="submit" class="btn btn-outline-success">Mettre à jour les données</button>
+            <button type="submit" class="btn btn-outline-success" name="envoyer" id="envoyer ">Mettre à jour les données</button>
             </div>
         </form>
     </div>

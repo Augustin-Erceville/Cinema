@@ -25,4 +25,22 @@ class FilmsRepository {
         $filmObj= new Films($films->fetch(PDO::FETCH_ASSOC));
         return $filmObj;
     }
+
+    public function updateFilm(Films $film) {
+        $req = $this->bdd->connexion()->prepare(
+            'UPDATE films 
+             SET titre = :titre, description = :description, duree = :duree, 
+                 genre = :genre, sortie = :sortie, affiche = :affiche 
+             WHERE id_film = :id_film'
+        );
+
+        return $req->execute([
+            'id_film'   => $film->getIdFilm(),
+            'titre'    => $film->getTitre(),
+            'description' => $film->getDescription(),
+            'sortie' => $film->getSortie(),
+            'affiche'     => $film->getAffiche(),
+            'duree' => $film->getDuree(),
+        ]);
+    }
 }
