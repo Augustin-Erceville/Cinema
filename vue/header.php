@@ -21,14 +21,6 @@ session_start();
     <li class="nav-item">
         <a class="nav-link" aria-current="page" href="index.php">Acceuil</a>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Nouveautées</a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="index.php#films">Film à l'affiche</a></li>
-            <li><a class="dropdown-item" href="index.php#planning">Planning des scéances</a></li>
-            <li><a class="dropdown-item" href="index.php#reservation">Reserver ses places</a></li>
-        </ul>
-    </li>
     <li class="nav-item">
         <a class="nav-link" aria-current="page" href="about.php">A Propos</a>
     </li>
