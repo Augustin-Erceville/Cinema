@@ -57,6 +57,7 @@
         <p class="text-secondary">
             Notre espace détente, avec un petit café-snack, est également à votre disposition avant ou après votre séance
             pour prolonger votre expérience.
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d919.3642169788365!2d2.415972225419603!3d48.954777503412686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66b9f773f8117%3A0x9d0e30cb92152c8d!2s5-3%20Pl.%20Gabriel%20P%C3%A9ri%2C%2093440%20Dugny!5e1!3m2!1sfr!2sfr!4v1741168538003!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </p>
 
         <hr class="my-5">
