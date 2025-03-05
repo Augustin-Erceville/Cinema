@@ -38,10 +38,10 @@
         <h2 class="mb-3 text-warning">Tarifs</h2>
         <p class="text-secondary">Nous proposons des tarifs accessibles pour que chacun puisse profiter du cinéma :</p>
         <ul class="list-group mb-4">
-            <li class="list-group-item bg-light"><strong>Tarif plein :</strong> <span class="text-success">9 €</span></li>
-            <li class="list-group-item bg-light"><strong>Tarif réduit</strong> (étudiants, seniors, demandeurs d’emploi) : <span class="text-success">6 €</span></li>
-            <li class="list-group-item bg-light"><strong>Tarif enfant</strong> (-12 ans) : <span class="text-success">5 €</span></li>
-            <li class="list-group-item bg-light"><strong>Carte d’abonnement :</strong> <span class="text-success">40 €</span> pour 5 entrées (valable 6 mois)</li>
+            <li class="list-group-item bg-light"><strong>Tarif plein :</strong> <span class="text-success">149 €</span></li>
+            <li class="list-group-item bg-light"><strong>Tarif réduit</strong> (étudiants, seniors, demandeurs d’emploi) : <span class="text-success">96 €</span></li>
+            <li class="list-group-item bg-light"><strong>Tarif enfant</strong> (-12 ans) : <span class="text-success">55 €</span></li>
+            <li class="list-group-item bg-light"><strong>Carte d’abonnement :</strong> <span class="text-success">400 €</span> pour 5 entrées (valable 6 mois)</li>
         </ul>
         <p class="text-secondary">Les réductions sont applicables sur présentation d’un justificatif.</p>
 
