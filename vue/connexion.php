@@ -11,9 +11,9 @@ if (empty($_SESSION['csrf_token'])) {
      <div class="container mt-3">
           <h1 class="mb-4">Connexion</h1>
 
-          <?php if (isset($_SESSION["erreur"])) : ?>
-               <div class="alert alert-danger"><?= htmlspecialchars($_SESSION["erreur"]) ?></div>
-               <?php unset($_SESSION["erreur"]);?>
+          <?php if (isset($_SESSION["error_message"])) : ?>
+               <div class="alert alert-danger"><?= htmlspecialchars($_SESSION["error_message"]) ?></div>
+               <?php unset($_SESSION["error_message"]);?>
           <?php endif; ?>
 
           <form action="../src/traitement/connexion.php" method="post">
@@ -32,6 +32,4 @@ if (empty($_SESSION['csrf_token'])) {
 
           <p>Pas encore de compte ? <a href="inscription.php">S'inscrire</a></p>
      </div>
-
-
 <?php include("footer.php"); ?>

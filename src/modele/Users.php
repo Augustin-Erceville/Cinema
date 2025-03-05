@@ -22,8 +22,6 @@ class Users {
           }
      }
 
-     // Getters et Setters avec typage et vérifications
-
      public function getIdUser(): ?int {
           return $this->id_user;
      }

@@ -63,22 +63,21 @@ class UsersRepository {
         }
     }
 
-    public function connexion(string $email, string $password): ?Users {
-        try {
-            $req = $this->bdd->prepare('SELECT * FROM users WHERE email = :email');
-            $req->execute(['email' => $email]);
-            $res = $req->fetch(PDO::FETCH_ASSOC);
+     public function connexion($email, $password)
+     {
+          $sql = "SELECT * FROM users WHERE email = :email";
+          $stmt = $this->bdd->prepare($sql);
+          $stmt->execute(['email' => $email]);
+          $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($res && password_verify($password, $res['password'])) {
-                return new Users($res);
-            }
-            return null;
-        } catch (PDOException $e) {
-            return null;
-        }
-    }
+          if ($user && password_verify($password, $user['password'])) {
+               return new Users($user);
+          }
 
-    public function updateUser(Users $user): bool {
+          return null;
+     }
+
+     public function updateUser(Users $user): bool {
         try {
             $req = $this->bdd->prepare(
                  'INSERT INTO users (prenom, nom, telephone, email, password, naissance, role) 
@@ -102,7 +101,6 @@ class UsersRepository {
             return false;
         }
     }
-
     public function deleteUser(int $id): bool {
         try {
             $checkReq = $this->bdd->prepare('SELECT id_user FROM users WHERE id_user = :id');
