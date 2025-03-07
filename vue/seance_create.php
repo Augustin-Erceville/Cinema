@@ -1,7 +1,8 @@
 <?php
-include 'header.php'
+include 'header.php';
 require_once "../src/bdd/Config.php";
 
+$pdo = new Config();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ref_film = $_POST['ref_film'];
     $date = $_POST['date'];
