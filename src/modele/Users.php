@@ -26,7 +26,7 @@ class Users {
           return $this->id_user;
      }
 
-     public function setIdUser(?int $id_user): void {
+     public function setId_user(?int $id_user): void {
           $this->id_user = $id_user;
      }
 

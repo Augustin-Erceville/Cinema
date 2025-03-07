@@ -65,8 +65,9 @@ class UsersRepository {
                $stmt = $this->bdd->prepare($sql);
                $stmt->execute(['email' => $email]);
                $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-               if ($user) {
+               if(!empty($user) && password_verify($password, $user['password'])){
+                    $obj = new Users($user);
+                    return $obj;
                }
 
                return null;
