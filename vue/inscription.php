@@ -8,8 +8,6 @@
      <?php endif; ?>
 
      <form action="../src/traitement/inscription.php" method="post">
-          <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
-
           <div class="mb-3">
                <label for="prenom" class="form-label">Prénom</label><br>
                <input type="text" name="prenom" class="form-control" id="prenom" placeholder="Votre prénom" value="<?= htmlspecialchars($_POST['prenom'] ?? '') ?>" required aria-label="Prénom"/>

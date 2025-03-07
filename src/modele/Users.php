@@ -63,7 +63,7 @@ class Users {
      }
 
      public function setPassword(?string $password): void {
-          if (!empty($password) && !password_get_info($password)['algoName']) {
+          if (!empty($password) && password_get_info($password)['algo'] === 0) {
                $this->password = password_hash($password, PASSWORD_BCRYPT);
           } else {
                $this->password = $password;

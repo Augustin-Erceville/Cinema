@@ -1,11 +1,6 @@
 <?php
+session_start();
 include("header.php");
-?>
-<?php
-
-if (empty($_SESSION['csrf_token'])) {
-     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
 ?>
 
      <div class="container mt-3">
@@ -17,8 +12,6 @@ if (empty($_SESSION['csrf_token'])) {
           <?php endif; ?>
 
           <form action="../src/traitement/connexion.php" method="post">
-               <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
-
                <div class="mb-3">
                     <label for="email" class="form-label">Adresse mail</label>
                     <input type="email" name="email" id="email" class="form-control" required>

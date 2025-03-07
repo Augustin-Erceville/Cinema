@@ -1,6 +1,5 @@
 <?php
 require_once "../src/modele/Users.php";
-session_start();
 ?>
 <!DOCTYPE html>
 <?php include('../src/bdd/Config.php');?>
