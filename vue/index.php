@@ -2,7 +2,7 @@
 
 <section id="films" class="py-5 border border-light rounded shadow">
     <div class="container">
-        <h2 class="text-center text-light bg-dark mb-4 py-2 rounded border border-light shadow-sm">🎬 Films à l'Affiche</h2>
+        <h2 class="text-center mb-4 py-2 rounded border shadow-sm">Films à l'Affiche</h2>
         <div class="row g-4">
             <div class="col-md-3">
                 <div class="card">
@@ -49,7 +49,7 @@
 
 <section id="planning" class="py-5 bg-light border rounded shadow">
     <div class="container">
-        <h2 class="text-center text-dark mb-4 py-2 rounded border border-light shadow-sm">🗓️ Planning des Séances</h2>
+        <h2 class="text-center mb-4 py-2 rounded border shadow-sm">Planning des Séances</h2>
         <div class="table-responsive border rounded">
             <table class="table table-light table-bordered table-hover">
                 <thead class="table-primary text-dark border border-light">
@@ -77,7 +77,7 @@
 
 <section id="reservation" class="py-5 border border-light rounded shadow">
     <div class="container">
-        <h2 class="text-center text-light bg-dark mb-4 py-2 rounded border shadow-sm">🎟️ Réservez vos Places</h2>
+        <h2 class="text-center mb-4 py-2 rounded border shadow-sm">Réservez vos Places</h2>
         <div class="text-center mt-4">
             <a href="#" class="btn btn-light text-dark border shadow mb-5">✅ Réserver maintenant</a>
         </div>

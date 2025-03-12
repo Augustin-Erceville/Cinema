@@ -13,6 +13,7 @@ require_once "../src/modele/Users.php";
 </head>
 <body style="font-family: 'Comfortaa',sans-serif;">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<div class="bg-light">
 <h1 class="text-center" style="text-transform: uppercase">
     DugnyCiné
 </h1>
@@ -35,9 +36,7 @@ require_once "../src/modele/Users.php";
             <li><a class="dropdown-item" href="deconnexion.php">Deconnexion</a></li>
         </ul>
     </li>
-    <?php
-    if(isset($_SESSION['user']) && unserialize($_SESSION['user'])->getRole() == "Admin"){
-        ?>
+    <?php  if(isset($_SESSION['user']) && unserialize($_SESSION['user'])->getRole() == "Admin"){?>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Administration</a>
             <ul class="dropdown-menu">
@@ -47,7 +46,6 @@ require_once "../src/modele/Users.php";
                 <li><a class="dropdown-item" href="report.php">Gestion des reports</a></li>
             </ul>
         </li>
-        <?php
-    }
-    ?>
+        <?php  }  ?>
 </ul>
+</div>
