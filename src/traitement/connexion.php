@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['user_role'] = $user->getRole();
                     $_SESSION['user_name'] = $user->getPrenom() . ' ' . $user->getNom();
 
-                    header("Location: ../../vue/index.php");
+                    header("Location: ../../vue/acceuil.php");
                     exit();
                } else {
                     $message = "Identifiants incorrects. Veuillez réessayer.";

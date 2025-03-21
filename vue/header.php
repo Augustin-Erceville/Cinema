@@ -36,7 +36,7 @@ require_once "../src/modele/Users.php";
             <li><a class="dropdown-item" href="deconnexion.php">Deconnexion</a></li>
         </ul>
     </li>
-    <?php  if(isset($_SESSION['user']) && unserialize($_SESSION['user'])->getRole() == "Admin"){?>
+    <?php /* if(isset($_SESSION['user']) && unserialize($_SESSION['user'])->getRole() == "Admin"){*/?>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">Administration</a>
             <ul class="dropdown-menu">
@@ -46,6 +46,6 @@ require_once "../src/modele/Users.php";
                 <li><a class="dropdown-item" href="report.php">Gestion des reports</a></li>
             </ul>
         </li>
-        <?php  }  ?>
+        <?php /* } */ ?>
 </ul>
 </div>

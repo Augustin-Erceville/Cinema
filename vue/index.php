@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <a href="catalogue.php" class="btn btn-light text-dark border shadow">📚 Voir le catalogue complet</a>
+            <a href="catalogue.php" class="btn btn-light text-dark border shadow">Voir le catalogue complet</a>
         </div>
     </div>
 </section>
@@ -70,7 +70,7 @@
             </table>
         </div>
         <div class="text-center mt-4">
-            <a href="planning.php" class="btn text-dark rder border-light shadow">🔎 Voir plus de détails</a>
+            <a href="planning.php" class="btn text-dark rder border-light shadow">Voir plus de détails</a>
         </div>
     </div>
 </section>
@@ -79,7 +79,7 @@
     <div class="container">
         <h2 class="text-center mb-4 py-2 rounded border shadow-sm">Réservez vos Places</h2>
         <div class="text-center mt-4">
-            <a href="#" class="btn btn-light text-dark border shadow mb-5">✅ Réserver maintenant</a>
+            <a href="#" class="btn btn-light text-dark border shadow mb-5">Réserver maintenant</a>
         </div>
     </div>
 </section>
